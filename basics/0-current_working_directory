@@ -1,1 +1,2 @@
-The current working directory is: /alu-shell/basics
+#!/bin/bash
+pwd
