@@ -1,3 +1,2 @@
 #!/bin/bash
 ls -al; echo -e "\nListing files in the parent directory:"; ls -al ..; echo -e "\nListing files in the /boot directory:"; ls -al /boot
-
