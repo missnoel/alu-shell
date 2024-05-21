@@ -1,14 +1,2 @@
 #!/bin/bash
-if [ -n "$(ls -A)" ]; then
-  ls -al
-fi
-
-echo -e "\nListing files in the parent directory:"
-if [ -n "$(ls -A ..)" ]; then
-  ls -al ..
-fi
-
-echo -e "\nListing files in the /boot directory:"
-if [ -n "$(ls -A /boot)" ]; then
-  ls -al /boot
-fi
+ls -al ls -all .. ls -al /boot
