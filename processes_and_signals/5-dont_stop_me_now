@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# killing file 4-to_infinity_and_beyond
+
+
+pid = $(grep -f "4-to_infinity_and_beyond")
+
+if [ ! -z '$pid' ]; then
+kill '$pid"
