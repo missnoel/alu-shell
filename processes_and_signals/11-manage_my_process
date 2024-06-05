@@ -1,44 +1,26 @@
 #!/usr/bin/env bash
 # /etc/init.d/11-manage_my_process
 
-# Define the path to the PID file
-PID_FILE="/var/run/my_process.pid"
+#!/usr/bin/env bash
+# manages manage_my_process
 
-# Check the argument passed to the script
 case "$1" in
   start)
-    # Start the process in the background and get its PID
     manage_my_process &
-    echo $! > $PID_FILE
-    echo "manage_my_process started"
+    echo $! > /var/run/my_process.pid
+    echo 'manage_my_process started'
     ;;
   stop)
-    if [ -f $PID_FILE ]; then
-      # Read the PID from the file and kill the process
-      PID=$(cat $PID_FILE)
-      kill $PID
-      # Remove the PID file
-      rm -f $PID_FILE
-      echo "manage_my_process stopped"
-    else
-      echo "PID file not found, process may not be running"
-    fi
+    kill "$(cat /var/run/my_process.pid)"
+    rm -f manage_my_process
+    echo "manage_my_process stopped"
     ;;
   restart)
-    if [ -f $PID_FILE ]; then
-      # Read the PID from the file and kill the process
-      PID=$(cat $PID_FILE)
-      kill $PID
-      # Remove the PID file
-      rm -f $PID_FILE
-      echo "manage_my_process stopped"
-    else
-      echo "PID file not found, process may not be running"
-    fi
-    # Start the process in the background and get its PID
+    kill "$(cat /var/run/my_process.pid)"
+    rm -f manage_my_process
     manage_my_process &
-    echo $! > $PID_FILE
-    echo "manage_my_process restarted"
+    echo $! > /var/run/my_process.pid
+    echo "manage_my_process_restarted"
     ;;
   *)
     echo "Usage: manage_my_process {start|stop|restart}"
@@ -47,4 +29,3 @@ case "$1" in
 esac
 
 exit 0
-
