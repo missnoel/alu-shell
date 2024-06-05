@@ -4,9 +4,8 @@
 
 pid = $(pgrep  "bash ./4-to_infinity_and_beyond" -f)
 
-if [  -z '$pid' ];then
-	echo "Process not running"
-else
+if [ -n '$pid' ];then
+
 	kill -15 '$pid'
 fi
 
