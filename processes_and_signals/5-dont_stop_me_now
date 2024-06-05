@@ -6,3 +6,4 @@ pid = $(grep -f "4-to_infinity_and_beyond")
 
 if [ ! -z '$pid' ]; then
 kill '$pid"
+fi
