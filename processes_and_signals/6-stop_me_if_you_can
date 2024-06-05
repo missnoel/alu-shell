@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # killing the process 4 without using kill or killall
 
-pkill -15 "bash /.6-stop_me_if_you_can" -f
+pkill -15 "bash /.4-to_infinity_and_beyond" -f
