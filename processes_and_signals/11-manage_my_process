@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # /etc/init.d/11-manage_my_process
 
 # Define the path to the PID file
