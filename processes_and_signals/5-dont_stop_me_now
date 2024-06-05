@@ -4,8 +4,8 @@
 
 pid = $(pgrep  " ./4-to_infinity_and_beyond" -f)
 
-if [ -n '$pid' ];then
+if [ ! -z "$pid" ];then
 
-	kill -15 '$pid'
+	kill -15 "$pid"
 fi
 
