@@ -2,11 +2,11 @@
 # killing file 4-to_infinity_and_beyond
 
 
-pid = $(grep -f "4-to_infinity_and_beyond")
+pid = $(pgrep  "bash ./4-to_infinity_and_beyond" -f)
 
-if [  -z '$pid' ]; then
+if [  -z '$pid' ];then
 	echo "Process not running"
 else
-	kill '$pid'
+	kill -15 '$pid'
 fi
 
