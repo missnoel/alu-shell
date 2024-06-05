@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#trap
+#displays 'To infinity and beyond' infinitely every 2 seconds
+#displays 'I am invincible !!!' after receiving 15 alart
+
+trap 'echo "I am invincible!!!"' SIGTERM
+while true; do
+echo "To infinity and beyond"
+sleep 2
+done
