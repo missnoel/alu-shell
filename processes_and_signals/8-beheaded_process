@@ -5,5 +5,5 @@ pid = $(pgrep "bash ./7-highlander" -f)
 
 if [ -n "$pid" ];
 then
-	kill -15 $pi
+	kill -15 "$pid"
 fi
