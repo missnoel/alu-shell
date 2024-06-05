@@ -2,9 +2,9 @@
 # killing file 4-to_infinity_and_beyond
 
 
-pid = $(pgrep  " ./4-to_infinity_and_beyond" -f)
+pid = $(pgrep  " bash ./4-to_infinity_and_beyond" -f)
 
-if [ ! -z "$pid" ];then
+if [ -n "$pid" ];then
 
 	kill -15 "$pid"
 fi
